@@ -26,7 +26,7 @@ export class ProfileComponent implements OnInit {
 
     {name:'Blue-Eyes White Dragon',franchise: 'Yu-Gi-Oh!',imgURL:'/assets/images/bewd.png',description:'This legendary dragon is a powerful engine of destruction. Virtually invincible, very few have faced this awesome creature and lived to tell the tale. It"s type is [Dragon / Normal]. It"s level is 8. [ATK 3000 / DEF 2500]',rates:[1,2,3]},
     
-    {name:'Dragon Tales (bundle)',franchise: 'Dragon Tales',imgURL:'/assets/images/dragontales.jpeg',description:'This bundle consist of 3.5 dragons and 2 children. The dragons" names are Ord, Cassie, Zak, and Wheezie and the childrens" names are Emmy and Max.',rates:[1,2,3]}
+    {name:'Dragon Tales (bundle)',franchise: 'Dragon Tales',imgURL:'/assets/images/dragontales.jpeg',description:'This bundle consist of 3.5 dragons(Children Not Included). The dragons" names are Ord, Cassie, Zak, and Wheezie.',rates:[1,2,3]}
   ]
 
   chosenDragon:profile={name:'',franchise: '',imgURL:'',description:'',rates:[1,2,3]};
