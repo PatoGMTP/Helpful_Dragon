@@ -1,0 +1,37 @@
+:host
+{
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+}
+
+.top
+{
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 10px;
+
+    // align-items: center;
+    text-align: center;
+}
+
+.carousel
+{
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 10px;
+
+    align-items: center;
+    text-align: center;
+
+    background-color: linen;
+}
+
+.dynamic_slide
+{
+    padding: 6rem;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
