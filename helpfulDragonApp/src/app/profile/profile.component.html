@@ -1,15 +1,15 @@
 <div class="imgcontainer">
-    <div *ngFor="let dragon of dragonsArr"class="imgcard">
+    <div *ngFor="let dragon of dragonsArr"class="imgcard" (click)="displayInfo(dragon)">
         <p>{{dragon.name}}</p>
-        <img src='{{dragon.imgURL}}' alt="" style="height: 100px;">
+        <img #dragon src='{{dragon.imgURL}}' alt="" style="height: 100px;" >
     </div>
 </div>
 
 <div class="sidebar">
     <div class="side_top">
         <div class="dragon_profile">
-            <span class="dragon_name">Dragon Name</span>
-            <span class="dragon_description">Hey there! I'm good at flying and spewing fire!</span>
+            <span class="dragon_name">{{chosenDragon.name}}</span>
+            <span class="dragon_description">{{chosenDragon.description}}</span>
         </div>
 
         <form #dragonForm="ngForm">
