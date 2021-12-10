@@ -14,12 +14,34 @@
             <span class="dragon_description">{{chosenDragon.description}}</span>
         </div>
 
-        <form #dragonForm="ngForm">
-            Form here!
+        <form #dragonForm="ngForm" (ngSubmit)="onSubmit(dragonForm)" ngNativeValidate>
+            <div class="rent_type">
+                <label for="rent_type">Please choose a rent type:</label>
+                <select name="rent_type" id="rent_type" [(ngModel)]="rent_type" required>
+                    <option value=""></option>
+                    <option *ngFor="let tuple of rent_type_list" [value]="tuple[1]">{{tuple[0]}}</option>
+                </select>
+            </div>
+
+            <div class="start_date">
+                <label for="rent_type">Please choose a start date:</label>
+                <input type="date" name="start_date" id="start_date" [(ngModel)]="start_date">
+            </div>
+
+            <div class="rent_length">
+                <label for="rent_type">Please choose the number of {{rent_type}}:</label>
+                <input type="number" name="rent_length" id="rent_length" [(ngModel)]="rent_length">
+            </div>
+
+            <div class="add_dragon">
+                <button type="submit">Add to cart</button>
+            </div>
         </form>
     </div>
 
     <div class="side_bottom">
-        Submit!
+        <a routerLink="../checkout">
+            Checkout and Rent Dragons!
+        </a>
     </div>
 </div>

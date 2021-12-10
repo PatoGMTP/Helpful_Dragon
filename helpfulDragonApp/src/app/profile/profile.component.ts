@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { profile } from './profile';
 
 @Component({
@@ -37,6 +38,16 @@ export class ProfileComponent implements OnInit {
 
   displayInfo(dragon:profile){
     this.chosenDragon=dragon
+  }
+
+  rent_type: string = "";
+  rent_type_list: [string, string][] = [["Hourly", "hours"], ["Daily", "days"], ["Weekly", "weeks"]];
+  start_date: string = "";
+  rent_length: number = 0;
+
+  onSubmit(form: NgForm): void
+  {
+    console.log(form);
   }
 
 }
