@@ -1,0 +1,28 @@
+:host
+{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 10px;
+}
+
+.sidebar
+{
+    display: grid;
+    grid-template-rows: 1fr auto;
+    gap: 10px;
+}
+
+.side_top
+{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+}
+
+.dragon_profile
+{
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 10px;
+}
