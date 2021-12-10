@@ -3,15 +3,15 @@
     height: 100%;
     display: grid;
     grid-template-rows: 1fr 1fr;
-    gap: 10px;
+    gap: 0px;
 }
 
 .top
 {
     display: grid;
     grid-template-rows: auto 1fr;
-    gap: 10px;
-
+    gap: 0px;
+    height: 200px;
     // align-items: center;
     text-align: center;
 }
@@ -48,3 +48,6 @@
 .heading{
     font-weight: bolder;
 }
+ .top{
+     height: 100px;
+ }
