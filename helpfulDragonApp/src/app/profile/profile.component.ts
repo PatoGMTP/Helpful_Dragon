@@ -38,9 +38,13 @@ export class ProfileComponent implements OnInit {
 
   inCart: boolean = false;
 
-  displayInfo(dragon:profile){
+  current_element?: HTMLElement;
+
+  displayInfo(dragon:profile, element: HTMLElement){
+    console.log(element);
     this.chosenDragon=dragon;
     this.inCart = !!this.chosenDragon_list.find(item => item.dragon.name === this.chosenDragon.name);
+    this.current_element = element;
   }
 
   rent_type: string = "";
@@ -59,6 +63,7 @@ export class ProfileComponent implements OnInit {
       this.chosenDragon_list.push(
         {dragon: this.chosenDragon, rent_type: this.rent_type, start_date: this.start_date, rent_length: this.rent_length}
       )
+      this.current_element?.classList.add("chosen");
     }
 
   }

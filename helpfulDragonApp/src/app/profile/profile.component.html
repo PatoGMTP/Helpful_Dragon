@@ -4,7 +4,7 @@
 
 
 <div class="imgcontainer" *ngIf="choosing; else checkout">
-    <div *ngFor="let dragon of dragonsArr"class="imgcard" (click)="displayInfo(dragon)">
+    <div #drg *ngFor="let dragon of dragonsArr"class="imgcard" [id]="dragon.name" (click)="displayInfo(dragon, drg)">
         <p>{{dragon.name}}</p>
         <img #dragon src='{{dragon.imgURL}}' alt="" style="width: 200px;" >
         <p class="viewinfo">View Info</p>
