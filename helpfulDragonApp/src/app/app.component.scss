@@ -9,7 +9,17 @@
 header
 {
     display: flex;
-    justify-content: space-around;
+    justify-content:start;
+    background-color:rgb(1, 48, 28);
+}
+a{
+    color: white;
+}
 
-    background-color: gray;
+a:hover{
+    color: grey;
+}
+
+a:visited{
+    color:gold
 }
