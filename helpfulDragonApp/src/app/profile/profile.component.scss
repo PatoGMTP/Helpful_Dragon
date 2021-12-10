@@ -4,7 +4,7 @@
     display: grid;
     grid-template-columns: 3fr 1fr;
     gap: 10px;
-    max-height: 80vh;
+    max-height: 88vh;
 }
 
 .imgcontainer
@@ -18,22 +18,29 @@
 .sidebar
 {
     display: grid;
-    grid-template-rows: auto auto;
+    grid-template-rows: 1fr auto;
     gap: 10px;
 }
 
 .side_top
 {
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 6fr 5fr;
     gap: 10px;
 }
 
 .dragon_profile
 {
+    height: 100%;
     display: grid;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto auto 1fr;
     gap: 10px;
+    max-height: 40vh;
+}
+
+.dragon_description
+{
+    overflow: scroll;
 }
 
 form > div
