@@ -2,7 +2,7 @@
     <div *ngFor="let dragon of dragonsArr"class="imgcard" (click)="displayInfo(dragon)">
         <p>{{dragon.name}}</p>
         <img #dragon src='{{dragon.imgURL}}' alt="" style="width: 200px;" >
-        <span class="viewinfo">View Info</span>
+        <p class="viewinfo">View Info</p>
     </div>
 </div>
 
@@ -19,7 +19,14 @@
                 <label for="rent_type">Please choose a rent type:</label>
                 <select name="rent_type" id="rent_type" [(ngModel)]="rent_type" required>
                     <option value=""></option>
-                    <option *ngFor="let tuple of rent_type_list" [value]="tuple[1]">{{tuple[0]}}</option>
+                    <option class="rate" *ngFor="let tuple of rent_type_list; index as i" [value]="tuple[1]">
+                        <span>
+                            {{tuple[0]}}
+                        </span>
+                        <span>
+                            ${{chosenDragon.rates[i]}}
+                        </span>
+                    </option>
                 </select>
             </div>
 
