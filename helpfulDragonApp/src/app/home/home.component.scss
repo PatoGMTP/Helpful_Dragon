@@ -23,10 +23,17 @@
     grid-template-columns: auto 1fr auto;
     gap: 10px;
 
-    align-items: center;
+    // align-items: center;
     text-align: center;
 
     background-color: linen;
+}
+
+.prev, .next
+{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
 }
 
 .dynamic_slide
