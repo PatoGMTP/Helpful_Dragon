@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { profile } from '../profile/profile';
 
 @Component({
   selector: 'app-checkout',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./checkout.component.scss']
 })
 export class CheckoutComponent implements OnInit {
+
+  @Input() list?: {dragon: profile, rent_type: string, start_date: string, rent_length: number}[];
 
   constructor() { }
 

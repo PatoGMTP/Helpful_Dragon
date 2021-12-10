@@ -1,4 +1,9 @@
-<div class="imgcontainer">
+<ng-template #checkout>
+    <app-checkout [list]="chosenDragon_list"></app-checkout>
+</ng-template>
+
+
+<div class="imgcontainer" *ngIf="choosing; else checkout">
     <div *ngFor="let dragon of dragonsArr"class="imgcard" (click)="displayInfo(dragon)">
         <p>{{dragon.name}}</p>
         <img #dragon src='{{dragon.imgURL}}' alt="" style="width: 200px;" >
@@ -32,12 +37,12 @@
 
             <div class="start_date">
                 <label for="rent_type">Please choose a start date:</label>
-                <input type="date" name="start_date" id="start_date" [(ngModel)]="start_date">
+                <input type="date" name="start_date" id="start_date" [(ngModel)]="start_date" required>
             </div>
 
             <div class="rent_length">
                 <label for="rent_type">Please choose the number of {{rent_type}}:</label>
-                <input type="number" name="rent_length" id="rent_length" [(ngModel)]="rent_length">
+                <input type="number" name="rent_length" id="rent_length" [(ngModel)]="rent_length" required>
             </div>
 
             <div class="add_dragon">
@@ -47,8 +52,8 @@
     </div>
 
     <div class="side_bottom">
-        <a routerLink="../checkout">
+        <span (click)="toggleCheckout()">
             Checkout and Rent Dragons!
-        </a>
+        </span>
     </div>
 </div>

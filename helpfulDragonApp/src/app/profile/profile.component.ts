@@ -10,7 +10,7 @@ import { profile } from './profile';
 export class ProfileComponent implements OnInit {
 
   dragonsArr:profile[]=[
-    {name:'Charizard',franchise: 'Pokémon',imgURL:'/assets/images/charizard.png',description:'Charizard are noble and will not turn the full power of their flame on opponents significantly weaker than they are. Charizards are also known to be very eager to battle. Charizard seeks out stronger foes and only breathes fire during battles with worthy opponents. The fiery breath is so hot that it can turn any material to slag. They can be very dangerous and aggressive if provoked.',rates:[1,2,3]},
+    {name:'Charizard',franchise: 'Pokémon',imgURL:'/assets/images/charizard.png',description:'Charizard are noble and will not turn the full power of their flame on opponents significantly weaker than they are. Charizards are also known to be very eager to battle. Charizard seeks out stronger foes and only breathes fire during battles with worthy opponents. The fiery breath is so hot that it can turn any material to slag. They can be very dangerous and aggressive if provoked.',rates:[10,20,30]},
 
     {name:'Toothless',franchise: 'How to Train Your Dragon',imgURL:'/assets/images/toothless.jpeg',description:'Toothless is the most intelligent of all known dragons, and seems to have a dry sense of humor. He doesn"t take kindly to being offended, and is very protective of his human friend. He is usually quite playful and even a little teasing when not threatened and shows a sense of great curiosity.',rates:[1,2,3]},
 
@@ -36,8 +36,11 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  inCart: boolean = false;
+
   displayInfo(dragon:profile){
-    this.chosenDragon=dragon
+    this.chosenDragon=dragon;
+    this.inCart = !!this.chosenDragon_list.find(item => item.dragon.name === this.chosenDragon.name);
   }
 
   rent_type: string = "";
@@ -45,9 +48,26 @@ export class ProfileComponent implements OnInit {
   start_date: string = "";
   rent_length: number = 0;
 
+  chosenDragon_list: {dragon: profile, rent_type: string, start_date: string, rent_length: number}[] = [];
+
   onSubmit(form: NgForm): void
   {
     console.log(form);
+
+    if (!this.inCart)
+    {
+      this.chosenDragon_list.push(
+        {dragon: this.chosenDragon, rent_type: this.rent_type, start_date: this.start_date, rent_length: this.rent_length}
+      )
+    }
+
+  }
+
+  choosing: boolean = true;
+
+  toggleCheckout(): void
+  {
+    this.choosing = !this.choosing;
   }
 
 }
