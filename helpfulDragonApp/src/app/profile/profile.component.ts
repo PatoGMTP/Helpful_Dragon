@@ -64,6 +64,7 @@ export class ProfileComponent implements OnInit {
         {dragon: this.chosenDragon, rent_type: this.rent_type, start_date: this.start_date, rent_length: this.rent_length}
       )
       this.current_element?.classList.add("chosen");
+      console.log(this.chosenDragon_list)
     }
 
   }

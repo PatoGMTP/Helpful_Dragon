@@ -1,5 +1,17 @@
-TEST!
-
 <div class="calcs">
-    {{list}}
+    <div class="drg" *ngFor="let chosen of list">
+        <span>
+            {{chosen.dragon.name}}:
+        </span>
+        <span>
+            {{chosen.rent_length}} {{chosen.rent_type}} 
+        </span>
+        <span>
+            starting on: {{chosen.start_date}}
+        </span>
+        <span>
+        </span>
+    </div>
 </div>
+
+Total cost is: {{total}}
