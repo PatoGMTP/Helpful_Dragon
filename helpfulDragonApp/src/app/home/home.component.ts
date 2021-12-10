@@ -12,8 +12,8 @@ export class HomeComponent implements OnInit {
   index: number = 0;
 
   review_list: {title: string, text: string}[] = [
-    {title: "1", text: "11"},
-    {title: "2", text: "22"},
+    {title: "Charizard is the sweetest dragon out there!", text: "'I've known him since he was a charmander, he wouldn't hurt a fly.' -Ash Ketchum"},
+    {title: "Don't let her size", text: "22"},
     {title: "3", text: "33"},
     {title: "4", text: "44"},
     {title: "5", text: "55"},
