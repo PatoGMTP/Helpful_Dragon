@@ -9,22 +9,28 @@
 
 <div class="bottom">
     <div class="carousel">
-        <div class="prev">
-            Previous
+        <div class="prev" (click)="changeSlide(-1)">
+            <div class="left_arrow">
+                Previous
+            </div>
         </div>
 
         <div class="dynamic_slide">
             <span class="heading">
                 Review Title
+                {{review.title}}
             </span>
 
             <span class="review">
                 Review Content: long text here and here and here and here and here and here and here
+                {{review.text}}
             </span>
         </div>
 
-        <div class="next">
-            Next
+        <div class="next" (click)="changeSlide(1)">
+            <div class="right_arrow">
+                next
+            </div>
         </div>
     </div>
 </div>
